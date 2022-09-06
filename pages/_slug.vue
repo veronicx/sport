@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-gradient-to-r from-stone-600 to-stone-800 w-full h-full flex flex-col items-center justify-center">
+  <div class="bg-black sm:bg-gradient-to-r sm:from-stone-600 sm:to-stone-800 w-full h-full flex flex-col items-center justify-center">
     <div v-if="currentPlayer" class="h-full w-2/3 md:w-3/4 bg-black pb-40">
       <Player v-if="currentPlayer" :current-player="currentPlayer" />
     </div>
