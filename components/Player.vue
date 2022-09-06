@@ -1,8 +1,8 @@
 <template>
-  <div v-if="currentPlayer.statistics" class="bg-black h-full w-fit text-white text-md pb-40">
+  <div v-if="currentPlayer.statistics" class="bg-black h-full w-fit flex flex-col items-center justify-center text-white text-md pb-40 pt-20">
     <div class="w-fit bg-black flex flex-col  items-center justify-center sm:flex-row">
-      <img :src="generateImage(currentPlayer.cardImage.asset._ref)" :alt="currentPlayer.name" class="w-2/6 h-2/6 sm:w-2/6 sm:h-2/6 object-contain">
-      <div v-if="currentPlayer.statistics" class="grid grid-rows-3 grid-flow-col gap-4 justify-evenly sm:flex sm:flex-wrap">
+      <img :src="generateImage(currentPlayer.cardImage.asset._ref)" :alt="currentPlayer.name" class=" lg:w-1/6 lgh-1/6 sm:w-2/6 sm:h-2/6 object-contain">
+      <div v-if="currentPlayer.statistics" class="grid grid-rows-3 grid-flow-col gap-4 justify-evenly sm:flex sm:flex-wrap lg:flex lg:flex-row lg:justify-around">
         <div class="flex flex-col justify-between h-fit p-2">
           <p class="uppercase p-0 w-full h-8 border-b-2 border-t-2 text-center flex flex-row justify-between">
             PACE <strong>{{ currentPlayer.statistics.pace.average }}</strong>
@@ -120,7 +120,7 @@
       </div>
     </div>
     <div class="flex flex-col w-full justify-center items-center mt-10 p-4  sm:self-auto">
-      <div class="flex flex-row w-full mb-4 justify-between p-2 items-center sm:self-start  sm:w-1/4 sm:mb-2">
+      <div class="flex flex-row w-full mb-4 justify-between p-2 items-center sm:self-start  sm:w-5/12 sm:mb-2">
         <h3 class="text-2xl mr-4">
           {{ currentPlayer.name }}
         </h3>
@@ -183,7 +183,7 @@ export default {
   name: 'Player',
   props: {
     currentPlayer: {
-      type: String,
+      type: Object,
       required: true
     }
   },

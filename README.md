@@ -1,69 +1,16 @@
-# realsport
+### `Real Sport`
 
-## Build Setup
+Real Sport is an application which provides all data for Fifa Cards, allowing you to find all the card's you need.
 
-```bash
-# install dependencies
-$ npm install
+### `Landing Page` 
 
-# serve with hot reload at localhost:3000
-$ npm run dev
+I've started the landing page or the table page by creating the table component, the table component could've been replaced by a library called 'Vue-good-table' which is a library that offers a responsive table with filtering enabled by default. However, there were some fundamental issues with the library. the library was not SSR Supported, and with my intention of everything to be SSR, I've scratched the idea and started making my table with SSR. I've started making a simple responsive table with filtering enabled for Position, Shooting, Physical, Defense, etc. I've added the redirection to the detail page only when clicking on the player name as it was the best choice for mobile users. As a final step, I've added an alternate text if we don't get any data from our API or store.
 
-# build for production and launch server
-$ npm run build
-$ npm run start
+### `Detail Page`
 
-# generate static project
-$ npm run generate
-```
+I started working on the detail page after finishing the landing page. With this in mind, it was time to build the Detail Page. The core principle for the page was to be a dynamic page based on the slug of the player. Based on the slug property from the player, we can generate a query to find that player if the player data are not stored. The Player Component was designed to be as responsive and straightforward as feasible. Since not all of the players shared the same statistics, I applied validation to each player's data statistics to eliminate any potential problems. If the player is unavailable in-store or unavailable via the API, I've included a note describing the situation and redirection to the landing page
 
-For detailed explanation on how things work, check out the [documentation](https://nuxtjs.org).
+### `Store`
 
-## Special Directories
+I've included Vuex to store the current player on the detail page and all the players on the landing page for two reasons: Minimize  API requests for the same data to improve transition and shorten CLS wait times.
 
-You can create the following extra directories, some of which have special behaviors. Only `pages` is required; you can delete them if you don't want to use their functionality.
-
-### `assets`
-
-The assets directory contains your uncompiled assets such as Stylus or Sass files, images, or fonts.
-
-More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/directory-structure/assets).
-
-### `components`
-
-The components directory contains your Vue.js components. Components make up the different parts of your page and can be reused and imported into your pages, layouts and even other components.
-
-More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/directory-structure/components).
-
-### `layouts`
-
-Layouts are a great help when you want to change the look and feel of your Nuxt app, whether you want to include a sidebar or have distinct layouts for mobile and desktop.
-
-More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/directory-structure/layouts).
-
-
-### `pages`
-
-This directory contains your application views and routes. Nuxt will read all the `*.vue` files inside this directory and setup Vue Router automatically.
-
-More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/get-started/routing).
-
-### `plugins`
-
-The plugins directory contains JavaScript plugins that you want to run before instantiating the root Vue.js Application. This is the place to add Vue plugins and to inject functions or constants. Every time you need to use `Vue.use()`, you should create a file in `plugins/` and add its path to plugins in `nuxt.config.js`.
-
-More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/directory-structure/plugins).
-
-### `static`
-
-This directory contains your static files. Each file inside this directory is mapped to `/`.
-
-Example: `/static/robots.txt` is mapped as `/robots.txt`.
-
-More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/directory-structure/static).
-
-### `store`
-
-This directory contains your Vuex store files. Creating a file in this directory automatically activates Vuex.
-
-More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/directory-structure/store).

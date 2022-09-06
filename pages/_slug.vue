@@ -1,6 +1,6 @@
 <template>
   <div class="bg-gradient-to-r from-stone-600 to-stone-800 w-full h-full flex flex-col items-center justify-center">
-    <div v-if="currentPlayer" class="w-3/4 h-full bg-black">
+    <div v-if="currentPlayer" class="h-full w-2/3 md:w-3/4 bg-black pb-40">
       <Player v-if="currentPlayer" :current-player="currentPlayer" />
     </div>
     <div v-else class="m-20 text-white A flex flex-col bg-transparent items-center w-full h-auto text-center">
