@@ -52,10 +52,6 @@ export default {
 
 <style>
 
-*{
-  font-family: 'Manrope';
-}
-
 *::-webkit-scrollbar {
   width: 8px;
 }

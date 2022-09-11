@@ -1,79 +1,77 @@
 <!-- eslint-disable vue/no-mutating-props -->
 <template>
-  <div class="w-full">
-    <table class="block overflow-x-auto whitespace-nowrap text-xl">
-      <thead>
-        <tr>
-          <th v-for="head in heads" :key="head" scope="col" class=" font-medium text-white border-r-2 b-slate-200 border-stone-600 bg-black px-2 py-2 text-left">
-            <div class="flex flex-row justify-between items-center">
-              {{ head }}
-              <div class="flex flex-col">
-                <img src="../static/up.png" :alt="`Up Button For ${head} which is one of the table heads `" @click="tableHead(head, 'up')">
-                <img src="../static/down.png" :alt="`Down Button For ${head} which is one of the table heads `" @click="tableHead(head, 'down')">
-              </div>
+  <table class="w-full block overflow-x-auto whitespace-nowrap text-xl xl:table">
+    <thead>
+      <tr>
+        <th v-for="head in heads" :key="head" scope="col" class=" font-medium text-white border-r-2 b-slate-200 border-stone-600 bg-black px-2 py-2 text-left">
+          <div class="flex flex-row justify-between items-center">
+            {{ head }}
+            <div class="flex flex-col">
+              <img src="../static/up.png" :alt="`Up Button For ${head} which is one of the table heads `" @click="tableHead(head, 'up')">
+              <img src="../static/down.png" :alt="`Down Button For ${head} which is one of the table heads `" @click="tableHead(head, 'down')">
             </div>
-          </th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr v-for="player in players" :key="player._id">
-          <td class=" text-white bg-stone-900 font-light px-2 py-4 whitespace-nowrap border-b border-black" @click="setPlayer(player)">
-            {{ player.name }}
-          </td>
-          <td class=" text-white bg-stone-900 font-light px-2 py-4 whitespace-nowrap border-b border-black">
-            <span class="w-full p-2 px-4  rounded bg-white text-black hover:bg-slate-400 hover:text-white">
-              {{ player.rating }}
-            </span>
-          </td>
-          <td class=" text-white bg-stone-900 self-center font-light px-2 py-2 whitespace-nowrap border-b border-black">
-            <span class="w-full p-2 px-4  rounded bg-black text-white hover:bg-white hover:text-black h-5/6">
-              {{ player.position }}
-            </span>
-          </td>
-          <td class=" text-white bg-stone-900 font-light px-2 py-4 whitespace-nowrap border-b border-black">
-            <span class="w-full p-2 px-4  rounded bg-black text-white hover:bg-white hover:text-black h-5/6">
-              {{ player.position }}
-            </span>
-          </td>
-          <td class=" text-white bg-stone-900 font-light px-2 py-4 whitespace-nowrap border-b border-black">
-            <span class="w-full p-2 px-4 m-2  rounded bg-black border-2 border-white text-white hover:bg-white hover:text-black h-4/6">
-              {{ player.statistics.pace.average }}
-            </span>
-          </td>
-          <td class=" text-white bg-stone-900 font-light px-2 py-4 whitespace-nowrap border-b border-black">
-            <span class="w-full p-2 px-4 m-2  rounded bg-black border-2 border-white text-white hover:bg-white hover:text-black h-4/6">
-              {{ player.statistics.shooting.average }}
-            </span>
-          </td>
-          <td class=" text-white bg-stone-900 font-light px-2 py-4 whitespace-nowrap border-b border-black">
-            <span class="w-full p-2 px-4 m-2  rounded bg-black border-2 border-white text-white hover:bg-white hover:text-black h-4/6">
-              {{ player.statistics.passing.average }}
-            </span>
-          </td>
-          <td class=" text-white bg-stone-900 font-light px-2 py-4 whitespace-nowrap border-b border-black">
-            <span class="w-full p-2 px-4 m-2  rounded bg-black border-2 border-white text-white hover:bg-white hover:text-black h-4/6">
-              {{ player.statistics.dribbling.average }}
-            </span>
-          </td>
-          <td class=" text-white bg-stone-900 font-light px-2 py-4 whitespace-nowrap border-b border-black">
-            <span class="w-full p-2 px-4 m-2  rounded bg-black border-2 border-white text-white hover:bg-white hover:text-black h-4/6">
-              {{ player.statistics.defense.average }}
-            </span>
-          </td>
-          <td class=" text-white bg-stone-900 font-light px-2 py-4 whitespace-nowrap border-b border-black">
-            <span class="w-full p-2 px-4 m-2  rounded bg-black border-2 border-white text-white hover:bg-white hover:text-black h-4/6">
-              {{ player.statistics.physical.average }}
-            </span>
-          </td>
-          <td class=" text-white bg-stone-900 font-light px-2 py-4 whitespace-nowrap border-b border-black">
-            <span class="w-full p-2 px-4  rounded bg-black text-white hover:bg-white hover:text-black h-5/6">
-              {{ player.workRatesDefensive.charAt(0) }}/{{ player.workRatesAttacking.charAt(0) }}
-            </span>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
+          </div>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr v-for="player in players" :key="player._id">
+        <td class=" text-white bg-stone-900 font-light px-2 py-4 whitespace-nowrap border-b border-black" @click="setPlayer(player)">
+          {{ player.name }}
+        </td>
+        <td class=" text-white bg-stone-900 font-light px-2 py-4 whitespace-nowrap border-b border-black">
+          <span class="w-full p-2 px-4  rounded bg-white text-black hover:bg-slate-400 hover:text-white">
+            {{ player.rating }}
+          </span>
+        </td>
+        <td class=" text-white bg-stone-900 self-center font-light px-2 py-2 whitespace-nowrap border-b border-black">
+          <span class="w-full p-2 px-4  rounded bg-black text-white hover:bg-white hover:text-black h-5/6">
+            {{ player.position }}
+          </span>
+        </td>
+        <td class=" text-white bg-stone-900 font-light px-2 py-4 whitespace-nowrap border-b border-black">
+          <span class="w-full p-2 px-4  rounded bg-black text-white hover:bg-white hover:text-black h-5/6">
+            {{ player.position }}
+          </span>
+        </td>
+        <td class=" text-white bg-stone-900 font-light px-2 py-4 whitespace-nowrap border-b border-black">
+          <span class="w-full p-2 px-4 m-2  rounded bg-black border-2 border-white text-white hover:bg-white hover:text-black h-4/6">
+            {{ player.statistics.pace.average }}
+          </span>
+        </td>
+        <td class=" text-white bg-stone-900 font-light px-2 py-4 whitespace-nowrap border-b border-black">
+          <span class="w-full p-2 px-4 m-2  rounded bg-black border-2 border-white text-white hover:bg-white hover:text-black h-4/6">
+            {{ player.statistics.shooting.average }}
+          </span>
+        </td>
+        <td class=" text-white bg-stone-900 font-light px-2 py-4 whitespace-nowrap border-b border-black">
+          <span class="w-full p-2 px-4 m-2  rounded bg-black border-2 border-white text-white hover:bg-white hover:text-black h-4/6">
+            {{ player.statistics.passing.average }}
+          </span>
+        </td>
+        <td class=" text-white bg-stone-900 font-light px-2 py-4 whitespace-nowrap border-b border-black">
+          <span class="w-full p-2 px-4 m-2  rounded bg-black border-2 border-white text-white hover:bg-white hover:text-black h-4/6">
+            {{ player.statistics.dribbling.average }}
+          </span>
+        </td>
+        <td class=" text-white bg-stone-900 font-light px-2 py-4 whitespace-nowrap border-b border-black">
+          <span class="w-full p-2 px-4 m-2  rounded bg-black border-2 border-white text-white hover:bg-white hover:text-black h-4/6">
+            {{ player.statistics.defense.average }}
+          </span>
+        </td>
+        <td class=" text-white bg-stone-900 font-light px-2 py-4 whitespace-nowrap border-b border-black">
+          <span class="w-full p-2 px-4 m-2  rounded bg-black border-2 border-white text-white hover:bg-white hover:text-black h-4/6">
+            {{ player.statistics.physical.average }}
+          </span>
+        </td>
+        <td class=" text-white bg-stone-900 font-light px-2 py-4 whitespace-nowrap border-b border-black">
+          <span class="w-full p-2 px-4  rounded bg-black text-white hover:bg-white hover:text-black h-5/6">
+            {{ player.workRatesDefensive.charAt(0) }}/{{ player.workRatesAttacking.charAt(0) }}
+          </span>
+        </td>
+      </tr>
+    </tbody>
+  </table>
 </template>
 
 <script>
