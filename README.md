@@ -1,6 +1,6 @@
 ### `Sport`
 
-Real Sport is an application which provides all data for Fifa Cards, allowing you to find all the card's you need.
+Sport is an application which provides all data for Fifa Cards, allowing you to find all the card's you need.
 
 ### `Landing Page` 
 
